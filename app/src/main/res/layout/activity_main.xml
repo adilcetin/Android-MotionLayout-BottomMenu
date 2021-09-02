@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/motionLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layoutDescription="@xml/scene_bottom_menu">
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/main_layout_whatsapp"
+            android:src="@drawable/unselected"
+            app:altSrc="@drawable/selected"
+            android:layout_width="0dp"
+            android:scaleType="fitXY"
+            app:overlay="false"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/unselected"
+            android:tint="#65DEF7"
+            app:layout_constraintEnd_toStartOf="@+id/main_layout_browser" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:id="@+id/main_layout_browser"
+            app:layout_constraintStart_toEndOf="@+id/main_layout_whatsapp"
+            app:layout_constraintEnd_toStartOf="@+id/main_layout_mail"
+            android:tint="#65DEF7"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_gravity="center"
+            android:src="@drawable/unselected"
+            app:altSrc="@drawable/selected"
+            app:overlay="false"/>
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/main_layout_mail"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toStartOf="@+id/main_layout_home"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/main_layout_browser"
+            android:tint="#65DEF7"
+            android:layout_gravity="center"
+            android:src="@drawable/unselected"
+            app:altSrc="@drawable/selected"
+            app:overlay="false"/>
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/main_layout_home"
+            app:layout_constraintStart_toEndOf="@+id/main_layout_mail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:tint="#65DEF7"
+            android:layout_gravity="center"
+            android:src="@drawable/unselected"
+            app:altSrc="@drawable/selected"
+            app:overlay="false"/>
+
+        <ImageView
+            android:id="@+id/main_imagebutton_whatsapp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/whatsapp"
+            app:tint="@color/white"
+            android:scaleType="fitCenter"
+            android:layout_marginBottom="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/main_layout_browser"/>
+
+
+        <ImageView
+            android:id="@+id/main_imagebutton_browser"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/internet"
+            app:tint="@color/white"
+            android:scaleType="fitCenter"
+            android:layout_marginBottom="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/main_layout_whatsapp"
+            app:layout_constraintEnd_toStartOf="@+id/main_layout_mail"/>
+
+        <ImageView
+            android:id="@+id/main_imagebutton_home"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@android:color/transparent"
+            android:layout_gravity="center"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/home"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/main_layout_home"
+            app:layout_constraintStart_toEndOf="@+id/main_layout_browser"
+            android:layout_marginBottom="18dp"
+            app:tint="@color/white"/>
+
+        <ImageView
+            android:id="@+id/main_imagebutton_mail"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@android:color/transparent"
+            android:layout_gravity="center"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/mail"
+            app:layout_constraintStart_toEndOf="@+id/main_layout_mail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="18dp"
+            app:tint="@color/white"/>
+
+
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

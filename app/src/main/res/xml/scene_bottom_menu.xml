@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetStart="@+id/base"
+        motion:constraintSetEnd="@+id/whatsappScene"
+        motion:duration="200">
+    </Transition>
+
+
+    <ConstraintSet android:id="@+id/base">
+
+        <Constraint android:id="@+id/main_layout_whatsapp">
+            <CustomAttribute
+                motion:attributeName="crossfade"
+                motion:customFloatValue="0" />
+        </Constraint>
+
+        <Constraint android:id="@+id/main_layout_browser">
+            <CustomAttribute
+                motion:attributeName="crossfade"
+                motion:customFloatValue="0" />
+        </Constraint>
+
+        <Constraint android:id="@+id/main_layout_mail">
+            <CustomAttribute
+                motion:attributeName="crossfade"
+                motion:customFloatValue="0" />
+        </Constraint>
+
+        <Constraint android:id="@+id/main_layout_home">
+            <CustomAttribute
+                motion:attributeName="crossfade"
+                motion:customFloatValue="0" />
+        </Constraint>
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/whatsappScene" motion:deriveConstraintsFrom="@id/base">
+
+        <Constraint
+            android:id="@+id/main_layout_whatsapp">
+            <CustomAttribute
+                motion:attributeName="crossfade"
+                motion:customFloatValue="1" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/main_imagebutton_whatsapp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="18dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toStartOf="@+id/main_layout_browser" />
+    </ConstraintSet>
+
+
+    <ConstraintSet android:id="@+id/browserScene" motion:deriveConstraintsFrom="@id/base">
+        <Constraint
+            android:id="@+id/main_layout_browser">
+            <CustomAttribute
+                motion:attributeName="crossfade"
+                motion:customFloatValue="1" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/main_imagebutton_browser"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="18dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toEndOf="@+id/main_layout_whatsapp"
+            motion:layout_constraintEnd_toStartOf="@+id/main_layout_mail" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/homeScene" motion:deriveConstraintsFrom="@id/base">
+        <Constraint
+            android:id="@+id/main_layout_mail" android:animateLayoutChanges="false">
+            <CustomAttribute
+                motion:attributeName="crossfade"
+                motion:customFloatValue="1" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/main_imagebutton_home"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="18dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toEndOf="@+id/main_layout_browser"
+            motion:layout_constraintEnd_toStartOf="@+id/main_layout_home" />
+    </ConstraintSet>
+
+
+    <ConstraintSet android:id="@+id/mailScene" motion:deriveConstraintsFrom="@id/base">
+        <Constraint
+            android:id="@+id/main_layout_home">
+            <CustomAttribute
+                motion:attributeName="crossfade"
+                motion:customFloatValue="1" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/main_imagebutton_mail"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="18dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toEndOf="@+id/main_layout_mail"
+            motion:layout_constraintEnd_toEndOf="parent" />
+    </ConstraintSet>
+
+</MotionScene>

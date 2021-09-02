@@ -1,0 +1,2 @@
+rootProject.name = "motionlayout_experiment"
+include ':app'
